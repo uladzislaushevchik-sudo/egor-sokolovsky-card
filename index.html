@@ -475,6 +475,180 @@
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
     [data-theme="dark"] .toast { background: rgba(242,242,247,.92); color: #000; }
 
+  
+    /* —— Usability: Vocab / HW / Exercises —— */
+    .search-bar {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 12px;
+      background: var(--fill); border-radius: 12px; padding: 4px 12px;
+    }
+    .search-bar input {
+      flex: 1; background: transparent; border: none; padding: 10px 4px;
+      outline: none; font-size: 0.95rem; color: var(--text); min-width: 0;
+    }
+    .search-bar .search-ico { opacity: .45; font-size: 1rem; }
+
+    .vocab-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 14px 12px; margin-bottom: 0;
+      border-bottom: 0.5px solid var(--separator);
+      background: transparent;
+    }
+    .vocab-item:last-child { border-bottom: none; }
+    .vocab-item .en {
+      font-size: 1.05rem; font-weight: 650; letter-spacing: -.02em;
+      color: var(--text);
+    }
+    .vocab-item .ru {
+      font-size: 0.92rem; color: var(--text-secondary); margin-top: 2px;
+    }
+    .vocab-item .ex-line {
+      font-size: 0.8rem; color: var(--muted); margin-top: 4px;
+      font-style: italic; line-height: 1.35;
+    }
+    .vocab-item .pos {
+      display: inline-block; font-size: 0.65rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .04em;
+      padding: 2px 7px; border-radius: 6px;
+      background: var(--primary-soft); color: var(--blue);
+      margin-left: 6px; vertical-align: middle;
+    }
+    .vocab-actions { display: flex; gap: 4px; flex-shrink: 0; }
+    .btn-speak {
+      border: none; background: var(--fill); border-radius: 10px;
+      width: 36px; height: 36px; cursor: pointer; flex-shrink: 0;
+      font-size: 1rem;
+    }
+    .btn-speak:active { transform: scale(0.95); }
+    .gram-cat-body { background: var(--card); border-radius: 0 0 12px 12px; }
+    .gram-cat { margin-bottom: 8px; border-radius: 12px; overflow: hidden;
+      border: 0.5px solid var(--separator); background: var(--card); }
+    .gram-cat-head {
+      width: 100%; text-align: left; border: none; cursor: pointer;
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 14px; background: var(--card);
+      font-size: 0.9rem; font-weight: 600; color: var(--text);
+    }
+    .gram-cat-head .chev { font-size: 0.7rem; transition: transform .15s; color: var(--muted); }
+    .gram-cat.open .gram-cat-head .chev { transform: rotate(90deg); }
+    .gram-cat-body { display: none; }
+    .gram-cat.open .gram-cat-body { display: block; }
+    .cat-meta {
+      margin-left: auto; font-size: 0.75rem; font-weight: 600;
+      color: var(--muted); background: var(--fill);
+      padding: 2px 8px; border-radius: 980px;
+    }
+    .add-panel {
+      border: 0.5px solid var(--separator); border-radius: 12px;
+      margin-bottom: 14px; overflow: hidden;
+    }
+    .add-panel summary {
+      padding: 12px 14px; cursor: pointer; font-weight: 600; font-size: 0.9rem;
+      list-style: none; background: var(--fill);
+    }
+    .add-panel summary::-webkit-details-marker { display: none; }
+    .add-panel[open] summary { border-bottom: 0.5px solid var(--separator); }
+    .add-panel .form-row { padding: 12px; }
+
+    .hw-item {
+      display: flex; flex-direction: column; gap: 8px;
+      padding: 14px; margin-bottom: 10px;
+      background: var(--card); border-radius: 14px;
+      border: 0.5px solid var(--separator);
+      box-shadow: var(--shadow);
+    }
+    .hw-item.done-item { opacity: 0.85; }
+    .hw-top { display: flex; align-items: flex-start; gap: 12px; }
+    .hw-check {
+      width: 26px; height: 26px; border-radius: 8px; flex-shrink: 0;
+      border: 2px solid var(--separator); background: var(--fill);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; margin-top: 1px;
+    }
+    .hw-check.is-done {
+      background: var(--green); border-color: var(--green); color: #fff;
+    }
+    .hw-task {
+      flex: 1; font-size: 0.98rem; font-weight: 550; line-height: 1.35;
+      color: var(--text); min-width: 0;
+    }
+    .hw-item.done-item .hw-task { text-decoration: line-through; color: var(--muted); }
+    .hw-meta {
+      display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center;
+      padding-left: 38px; font-size: 0.78rem; color: var(--muted);
+    }
+    .hw-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 9px; border-radius: 8px; background: var(--fill);
+      font-size: 0.72rem; font-weight: 500;
+    }
+    .hw-chip.deadline { background: rgba(255,149,0,.12); color: var(--orange); }
+    .hw-chip.link a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .hw-actions {
+      display: flex; flex-wrap: wrap; gap: 6px; padding-left: 38px;
+    }
+
+    .ex-toolbar { margin-bottom: 10px; }
+    .ex-filters-compact {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      margin-bottom: 10px;
+    }
+    @media (min-width: 560px) {
+      .ex-filters-compact { grid-template-columns: repeat(4, 1fr); }
+    }
+    .ex-filters-compact select {
+      width: 100%; font-size: 0.85rem; padding: 9px 10px;
+    }
+    .ex-source-block {
+      margin-bottom: 10px; border-radius: 12px;
+      border: 0.5px solid var(--separator); overflow: hidden;
+      background: var(--card);
+    }
+    .ex-source-head {
+      display: flex; align-items: center; gap: 8px; width: 100%;
+      padding: 12px 14px; margin: 0; text-align: left;
+      border: none; background: var(--card); cursor: pointer;
+      font-size: 0.85rem; font-weight: 650; color: var(--text);
+      text-transform: none; letter-spacing: 0;
+    }
+    .ex-source-head .chev { font-size: 0.7rem; color: var(--muted); transition: transform .15s; }
+    .ex-source-block.open .ex-source-head .chev { transform: rotate(90deg); }
+    .ex-source-body { display: none; border-top: 0.5px solid var(--separator); }
+    .ex-source-block.open .ex-source-body { display: block; }
+    .ex-prog {
+      height: 4px; border-radius: 2px; background: var(--fill);
+      flex: 1; max-width: 80px; overflow: hidden;
+    }
+    .ex-prog > i {
+      display: block; height: 100%; background: var(--green);
+      border-radius: 2px;
+    }
+    .ex-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 12px; margin: 0;
+      border-bottom: 0.5px solid var(--separator);
+      border-radius: 0; background: transparent;
+    }
+    .ex-item:last-child { border-bottom: none; }
+    .ex-item.done { opacity: 0.65; }
+    .ex-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+    .ex-badge {
+      font-size: 0.65rem; font-weight: 600; padding: 2px 6px;
+      border-radius: 5px; background: var(--fill); color: var(--muted);
+    }
+    .ex-badge.level { background: var(--primary-soft); color: var(--blue); }
+    .ex-btn {
+      border: none; border-radius: 8px; padding: 6px 10px;
+      font-size: 0.75rem; font-weight: 600; cursor: pointer;
+      white-space: nowrap;
+    }
+    .ex-btn.done-btn { background: rgba(52,199,89,.15); color: var(--green); }
+    .ex-btn.undone-btn { background: var(--fill); color: var(--muted); }
+    .ex-btn.hw-btn { background: var(--primary-soft); color: var(--blue); }
+    .stats-line {
+      font-size: 0.8rem; color: var(--muted); margin-bottom: 10px;
+    }
+
   </style>
 </head>
 <body>
@@ -596,10 +770,15 @@
         <p style="font-size:0.8rem;color:var(--muted);margin-bottom:10px">
           Egor’s words. Open a section to browse. Switch grouping mode.
         </p>
-        <div class="filter-row" id="vocabModeRow" style="margin-bottom:12px">
+        <div class="filter-row" id="vocabModeRow" style="margin-bottom:10px">
           <button type="button" class="filter-btn active" data-vmode="pos">By part of speech</button>
           <button type="button" class="filter-btn" data-vmode="theme">By topic</button>
         </div>
+        <div class="search-bar">
+          <span class="search-ico">🔍</span>
+          <input type="search" id="vocabSearch" placeholder="Search word or translation…" autocomplete="off">
+        </div>
+        <p class="stats-line" id="vocabStats"></p>
         <div class="form-row">
           <div class="form-group" style="min-width:100px">
             <label>Word (EN)</label>
@@ -711,7 +890,12 @@
         <div class="filter-row" style="margin-top:8px">
           <button class="filter-btn active" data-hwf="pending">In progress</button>
           <button class="filter-btn" data-hwf="done">Done</button>
+          <button class="filter-btn" data-hwf="all">All</button>
           <button class="filter-btn" data-hwf="archive">📦 Archive</button>
+        </div>
+        <div class="search-bar" style="margin-top:10px">
+          <span class="search-ico">🔍</span>
+          <input type="search" id="hwSearch" placeholder="Search homework…" autocomplete="off">
         </div>
         <div id="hwList"></div>
         <div class="empty-state" id="hwEmpty" style="display:none">No homework yet.</div>
@@ -725,34 +909,39 @@
         <p style="font-size:0.8rem;color:var(--muted);margin-bottom:10px">
           Tap the checkbox or ✓ to mark done. “+ HW” adds the exercise to Homework.
         </p>
-        <div class="filter-row" id="exFilters">
-          <button class="filter-btn active" data-exf="all">All</button>
-          <button class="filter-btn" data-exf="open">Not done</button>
-          <button class="filter-btn" data-exf="done">Done</button>
+                <div class="search-bar">
+          <span class="search-ico">🔍</span>
+          <input type="search" id="exSearch" placeholder="Search exercise…" autocomplete="off">
         </div>
-        <div class="filter-row" id="exLevelFilters" style="margin-top:4px">
-          <button class="filter-btn active" data-exlvl="all">Level: all</button>
-          <button class="filter-btn" data-exlvl="A1">A1</button>
-          <button class="filter-btn" data-exlvl="A2">A2</button>
-          <button class="filter-btn" data-exlvl="B1">B1</button>
-          <button class="filter-btn" data-exlvl="B2">B2</button>
-          <button class="filter-btn" data-exlvl="C1">C1</button>
+        <div class="ex-filters-compact">
+          <select id="exFilterStatus" aria-label="Status">
+            <option value="all">All statuses</option>
+            <option value="open">Not done</option>
+            <option value="done">Done</option>
+          </select>
+          <select id="exFilterLevel" aria-label="Level">
+            <option value="all">All levels</option>
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="C1">C1</option>
+          </select>
+          <select id="exFilterSource" aria-label="Source">
+            <option value="all">All sources</option>
+            <option value="British Council">British Council</option>
+            <option value="British Council 2">British Council 2</option>
+            <option value="Series">Series</option>
+          </select>
+          <select id="exFilterSkill" aria-label="Skill">
+            <option value="all">All skills</option>
+            <option value="Reading">Reading</option>
+            <option value="Listening">Listening</option>
+            <option value="Writing">Writing</option>
+            <option value="Speaking">Speaking</option>
+          </select>
         </div>
-        <div class="filter-row" id="exSourceFilters" style="margin-top:4px">
-          <button class="filter-btn active" data-exsrc="all">Source: all</button>
-          <button class="filter-btn" data-exsrc="British Council">BC</button>
-          <button class="filter-btn" data-exsrc="British Council 2">BC2</button>
-          
-          <button class="filter-btn" data-exsrc="Series">Series</button>
-        </div>
-        <div class="filter-row" id="exSkillFilters" style="margin-top:4px">
-          <button class="filter-btn active" data-exsk="all">Skill: all</button>
-          <button class="filter-btn" data-exsk="Reading">Reading</button>
-          <button class="filter-btn" data-exsk="Listening">Listening</button>
-          <button class="filter-btn" data-exsk="Writing">Writing</button>
-          <button class="filter-btn" data-exsk="Speaking">Speaking</button>
-          
-        </div>
+        <p class="stats-line" id="exStats"></p>
         <div style="margin:10px 0;font-size:0.82rem;color:var(--muted)" id="exStats">—</div>
         <div id="exList"></div>
         <div class="empty-state" id="exEmpty" style="display:none">No exercises in this filter</div>
@@ -1937,8 +2126,23 @@
       'General Verbs', 'Grammar Words', 'Other'
     ];
 
+    const q = (document.getElementById('vocabSearch')?.value || '').trim().toLowerCase();
+    let pool = vocab;
+    if (q) {
+      pool = vocab.filter(v =>
+        (v.word || '').toLowerCase().includes(q) ||
+        (v.trans || '').toLowerCase().includes(q) ||
+        (v.ex || '').toLowerCase().includes(q) ||
+        (v.theme || '').toLowerCase().includes(q)
+      );
+    }
+    const statsEl = document.getElementById('vocabStats');
+    if (statsEl) statsEl.textContent = q
+      ? `Found ${pool.length} of ${vocab.length}`
+      : `${vocab.length} words · tap a group to open`;
+
     const groups = {};
-    vocab.forEach(v => {
+    pool.forEach(v => {
       let key;
       if (mode === 'theme') {
         key = v.theme || 'Other';
@@ -1965,6 +2169,10 @@
 
     const openKey = (k) => mode + '::' + k;
 
+    // Auto-open when searching or only one group / few words
+    if (q || keys.length <= 2 || pool.length <= 12) {
+      keys.forEach(k => { window._vocabOpen[openKey(k)] = true; });
+    }
     list.innerHTML = keys.map(key => {
       const items = groups[key];
       const label = mode === 'pos' ? (POS_LABELS[key] || key) : key;
@@ -1977,20 +2185,18 @@
         </button>
         <div class="gram-cat-body">
           ${items.map(v => {
-            const defText = v.def || v.ex || '';
+            const ex = v.ex || v.def || '';
+            const tag = mode === 'theme' ? (v.pos || '') : (v.theme || '');
             return `
             <div class="vocab-item">
-              <button type="button" class="btn-speak" title="Озвучить" data-speak="${escAttr(v.word)}" onclick="speakWord(this.getAttribute('data-speak'))">🔊</button>
-              <div style="flex:1">
-                <span class="en">${esc(v.word)}</span>
-                ${mode === 'theme' && v.pos ? `<span class="pos">${esc(v.pos)}</span>` : ''}
-                ${mode === 'pos' && v.theme ? `<span class="pos">${esc(v.theme)}</span>` : ''}
+              <button type="button" class="btn-speak" title="Speak" data-speak="${escAttr(v.word)}" onclick="speakWord(this.getAttribute('data-speak'))">🔊</button>
+              <div style="flex:1;min-width:0">
+                <div><span class="en">${esc(v.word)}</span>${tag ? `<span class="pos">${esc(tag)}</span>` : ''}</div>
                 ${v.trans ? `<div class="ru">${esc(v.trans)}</div>` : ''}
-                ${defText ? `<button type="button" class="btn-def" onclick="toggleVocabDef(${v.id})">Definition ▾</button>
-                <div class="vocab-def" id="vdef_${v.id}">${esc(defText)}</div>` : ''}
+                ${ex ? `<div class="ex-line">${esc(ex)}</div>` : ''}
               </div>
               <div class="vocab-actions">
-                <button class="btn btn-danger btn-sm" onclick="deleteVocab(${v.id})">✕</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteVocab(${v.id})" title="Delete">✕</button>
               </div>
             </div>`;
           }).join('')}
@@ -2042,7 +2248,22 @@
       renderVocab();
     });
   });
-
+  const vocabSearch = document.getElementById('vocabSearch');
+  if (vocabSearch) {
+    let vt;
+    vocabSearch.addEventListener('input', () => {
+      clearTimeout(vt);
+      vt = setTimeout(() => renderVocab(), 120);
+    });
+  }
+  const hwSearch = document.getElementById('hwSearch');
+  if (hwSearch) {
+    let ht;
+    hwSearch.addEventListener('input', () => {
+      clearTimeout(ht);
+      ht = setTimeout(() => renderHomework(), 120);
+    });
+  }
 
   function addIrregular() {
     irregular.push({ id: Date.now(), inf: '', past: '', pp: '', trans: '' });
@@ -2106,7 +2327,7 @@
   function markHomeworkDone(id) {
     const item = homework.find(h => h.id === id);
     if (!item) return;
-    item.status = 'done';
+    item.status = item.status === 'done' ? 'pending' : 'done';
     save(KEYS.homework, homework); renderHomework(); updateQuickStats();
   }
   function deleteHomework(id) {
@@ -2123,6 +2344,14 @@
     if (isArchive) filtered = hwArchive;
     else if (hwFilter === 'all') filtered = homework;
     else filtered = homework.filter(h => h.status === hwFilter);
+    const hq = (document.getElementById('hwSearch')?.value || '').trim().toLowerCase();
+    if (hq) {
+      filtered = filtered.filter(h =>
+        (h.task || '').toLowerCase().includes(hq) ||
+        (h.notes || '').toLowerCase().includes(hq) ||
+        (h.source || '').toLowerCase().includes(hq)
+      );
+    }
 
     const activeCount = homework.length;
     const archCount = hwArchive.length;
@@ -2137,33 +2366,28 @@
     }
     empty.style.display = 'none';
     list.innerHTML = filtered.map(h => {
-      const statusLabel = h.status === 'done' ? 'Выполнено' : 'В процессе';
-      const statusClass = h.status === 'done' ? 'done' : 'pending';
-      const archiveBtn = (!isArchive && h.status === 'done')
-        ? `<button type="button" class="btn-archive" onclick="archiveHomework(${h.id})">📦 В архив</button>`
+      const isDone = h.status === 'done';
+      const archiveBtn = (!isArchive && isDone)
+        ? `<button type="button" class="btn btn-ghost btn-sm" onclick="archiveHomework(${h.id})">📦 Archive</button>`
         : '';
       const restoreBtn = isArchive
-        ? `<button type="button" class="btn-restore" onclick="restoreHomework(${h.id})">↩ Вернуть</button>
+        ? `<button type="button" class="btn btn-ghost btn-sm" onclick="restoreHomework(${h.id})">↩ Restore</button>
            <button type="button" class="btn btn-danger btn-sm" onclick="deleteArchivedHomework(${h.id})">✕</button>`
-        : `<button class="btn btn-danger btn-sm" onclick="deleteHomework(${h.id})">✕</button>`;
-      const statusBtn = isArchive
-        ? `<span class="hw-status ${statusClass}">${statusLabel}</span>`
-        : (h.status === 'done'
-            ? `<button class="hw-status done" onclick="cycleHwStatus(${h.id})">Done</button>`
-            : `<span class="hw-status pending">In progress</span>
-               <button type="button" class="btn-hw-done" onclick="markHomeworkDone(${h.id})">✓ Выполнено</button>`);
-      return `<div class="hw-item">
-          <div class="hw-task">${esc(h.task)}</div>
-          <div class="hw-meta">
-            ${statusBtn}
-            ${h.deadline ? `<span>📅 ${h.deadline}</span>` : ''}
-            ${h.created ? `<span>создано ${h.created}</span>` : ''}
-            ${h.archivedAt ? `<span>архив ${h.archivedAt}</span>` : ''}
-            ${h.source ? `<a href="${escAttr(h.source)}" target="_blank" style="color:var(--secondary)">ссылка</a>` : ''}
-            ${h.notes ? `<span>· ${esc(h.notes)}</span>` : ''}
-            ${archiveBtn}
-            ${restoreBtn}
+        : `<button class="btn btn-danger btn-sm" onclick="deleteHomework(${h.id})" title="Delete">✕</button>`;
+      const checkClick = isArchive ? '' : `onclick="markHomeworkDone(${h.id})"`;
+      const checkTitle = isDone ? 'Mark as in progress' : 'Mark done';
+      return `<div class="hw-item ${isDone ? 'done-item' : ''}">
+          <div class="hw-top">
+            <button type="button" class="hw-check ${isDone ? 'is-done' : ''}" ${checkClick} title="${checkTitle}" aria-label="${checkTitle}">${isDone ? '✓' : ''}</button>
+            <div class="hw-task">${esc(h.task)}</div>
           </div>
+          <div class="hw-meta">
+            ${h.deadline ? `<span class="hw-chip deadline">📅 ${esc(h.deadline)}</span>` : ''}
+            ${h.source ? `<span class="hw-chip link"><a href="${escAttr(h.source)}" target="_blank" rel="noopener">Open link</a></span>` : ''}
+            ${h.notes ? `<span class="hw-chip">${esc(h.notes)}</span>` : ''}
+            ${h.created ? `<span class="hw-chip">added ${esc(h.created)}</span>` : ''}
+          </div>
+          <div class="hw-actions">${archiveBtn}${restoreBtn}</div>
         </div>`;
     }).join('');
   }
@@ -2427,6 +2651,11 @@
     if (exSource === 'British Council 2' && e.source !== 'British Council 2') return false;
     if (exSource === 'Business' && e.kind !== 'business') return false;
     if (exSource === 'Series' && e.kind !== 'series') return false;
+    const eq = (document.getElementById('exSearch')?.value || '').trim().toLowerCase();
+    if (eq) {
+      const hay = ((e.topic || '') + ' ' + (e.source || '') + ' ' + (e.skill || '') + ' ' + (e.level || '')).toLowerCase();
+      if (!hay.includes(eq)) return false;
+    }
     return true;
   }
 
@@ -2456,12 +2685,23 @@
     });
     const sources = order.filter(s => bySrc[s]).concat(Object.keys(bySrc).filter(s => !order.includes(s)));
 
+    if (!window._exOpen) window._exOpen = {};
+    const searching = !!(document.getElementById('exSearch')?.value || '').trim();
     list.innerHTML = sources.map(src => {
       const items = bySrc[src];
       const d = items.filter(i => i.done).length;
-      return `<div class="ex-source-head">${esc(src)} · ${d}/${items.length}</div>` +
-        items.map(e => {
-          const meta = [e.level, e.skill].filter(Boolean).join(' · ');
+      const pct = items.length ? Math.round(100 * d / items.length) : 0;
+      const key = 'ex:' + src;
+      const isOpen = searching || !!window._exOpen[key] || sources.length === 1;
+      return `<div class="ex-source-block ${isOpen ? 'open' : ''}" data-exsrc-key="${escAttr(key)}">
+        <button type="button" class="ex-source-head" onclick="toggleExSource(this)">
+          <span class="chev">▶</span>
+          <span style="flex:1;min-width:0">${esc(src)}</span>
+          <span class="ex-prog" title="${d}/${items.length}"><i style="width:${pct}%"></i></span>
+          <span class="cat-meta">${d}/${items.length}</span>
+        </button>
+        <div class="ex-source-body">
+        ${items.map(e => {
           const title = e.url
             ? `<a class="ex-link" href="${escAttr(e.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${esc(e.topic)}</a>`
             : esc(e.topic);
@@ -2470,21 +2710,49 @@
               onchange="toggleExercise(${e.id}, this.checked)">
             <div style="flex:1;min-width:0">
               <div class="ex-title">${title}</div>
-              ${meta ? `<div class="ex-meta">${esc(meta)}</div>` : ''}
+              <div class="ex-badges">
+                ${e.level ? `<span class="ex-badge level">${esc(e.level)}</span>` : ''}
+                ${e.skill ? `<span class="ex-badge">${esc(e.skill)}</span>` : ''}
+              </div>
             </div>
             <div class="ex-actions">
-              <button type="button" class="ex-btn ${e.done ? 'undone-btn' : 'done-btn'}"
-                onclick="toggleExercise(${e.id}, ${e.done ? 'false' : 'true'})"
-                title="${e.done ? 'Mark as not done' : 'Mark as done'}">${e.done ? '↩' : '✓'}</button>
-              <button type="button" class="ex-btn hw" onclick="addExerciseToHomework(${e.id})"
-                title="Add to homework">+ HW</button>
+              <button type="button" class="ex-btn hw-btn" onclick="addExerciseToHomework(${e.id})" title="Add to homework">+ HW</button>
             </div>
           </div>`;
-        }).join('');
+        }).join('')}
+        </div>
+      </div>`;
     }).join('');
   }
 
-  // filter listeners
+  function toggleExSource(btn) {
+    const box = btn.closest('.ex-source-block');
+    if (!box) return;
+    const key = box.getAttribute('data-exsrc-key');
+    box.classList.toggle('open');
+    if (!window._exOpen) window._exOpen = {};
+    window._exOpen[key] = box.classList.contains('open');
+  }
+
+  // filter listeners (selects + search)
+  function bindExSelect(id, setter) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('change', () => { setter(el.value); renderExercises(); });
+  }
+  bindExSelect('exFilterStatus', v => { exFilter = v; });
+  bindExSelect('exFilterLevel', v => { exLevel = v; });
+  bindExSelect('exFilterSource', v => { exSource = v; });
+  bindExSelect('exFilterSkill', v => { exSkill = v; });
+  const exSearch = document.getElementById('exSearch');
+  if (exSearch) {
+    let t;
+    exSearch.addEventListener('input', () => {
+      clearTimeout(t);
+      t = setTimeout(() => renderExercises(), 150);
+    });
+  }
+  // legacy button filters (if still present)
   document.querySelectorAll('[data-exf]').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('[data-exf]').forEach(b => b.classList.remove('active'));
@@ -2517,7 +2785,6 @@
       renderExercises();
     });
   });
-
 
   document.querySelectorAll('[data-hwf]').forEach(btn => {
     btn.addEventListener('click', () => {
