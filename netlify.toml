@@ -1,1 +1,7 @@
-[build]\n  functions = "netlify/functions"\n\n[[redirects]]\n  from = "/api/schedule"\n  to = "/.netlify/functions/schedule"\n  status = 200\n
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/schedule"
+  to = "/.netlify/functions/schedule"
+  status = 200
